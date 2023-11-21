@@ -1,11 +1,8 @@
 function solution(n) {
-    let num = n;
-    let sum = 0;
-
-    while (num > 0) {
-        sum += num % 10;
-        num = Math.floor(num / 10);
+    let answer = 0;
+    let str = String(n); //문자열로 변환
+    for (let i =0; i <str.length; i++) {
+      answer += Number(str[i]); //자릿수를 숫자로 변환
     }
-
-    return sum;
+    return answer;
 }
