@@ -1,10 +1,11 @@
 function solution(arr1, arr2) {
-    const compareLength = arr1.length - arr2.length;
-    const compareSum = arr1.reduce((acc, num) => acc + num, 0) - arr2.reduce((acc, num) => acc + num, 0);
-
-    if (compareLength !== 0) {
-        return compareLength > 0 ? 1 : -1;
+    let answer;
+    if (arr1.length == arr2.length) {
+        let sum1 = arr1.reduce((sum, cur) => sum + cur, 0);
+        let sum2 = arr2.reduce((sum, cur) => sum + cur, 0);
+        answer = sum1 == sum2 ? 0 : (sum1 > sum2 ? 1 : -1);
+    } else {
+        answer = arr1.length > arr2.length ? 1 : -1;
     }
-
-    return compareSum === 0 ? 0 : compareSum > 0 ? 1 : -1;
+    return answer;
 }
