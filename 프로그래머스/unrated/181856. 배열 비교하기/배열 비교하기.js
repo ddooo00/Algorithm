@@ -1,11 +1,12 @@
 function solution(arr1, arr2) {
-    if(arr1.length === arr2.length){
-        const arr1Sum = arr1.reduce((acc, curr)=> acc+curr);
-        const arr2Sum = arr2.reduce((acc, curr)=> acc+curr);
+    const N1 = arr1.length;
+    const N2 = arr2.length;
 
-        return arr1Sum === arr2Sum ? 0: arr1Sum > arr2Sum  ? 1: -1 ;
-    }else{
-        return arr1.length > arr2.length ? 1 : -1;
+    if (N1 < N2) return -1;
+    if (N1 > N2) return 1;
 
-    }
+    const S1 = arr1.reduce((a,b) => a + b, 0);
+    const S2 = arr2.reduce((a,b) => a + b, 0);
+
+    return S1 < S2 ? -1 : S1 > S2 ? 1 : 0;
 }
