@@ -1,3 +1,3 @@
 function solution(flo) {
-   return parseInt(flo)
+   return Math.floor(flo)
 }
