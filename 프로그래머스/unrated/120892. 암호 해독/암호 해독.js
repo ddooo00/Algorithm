@@ -1,9 +1,7 @@
 function solution(cipher, code) {
-  let result = '';
+    let answer = '';
+    for(let i=code ; i<=cipher.length; i += code)
+     answer += cipher[i-1]
 
-  for (let i = code - 1; i < cipher.length; i += code) {
-    result += cipher[i];
-  }
-
-  return result;
+    return answer;
 }
