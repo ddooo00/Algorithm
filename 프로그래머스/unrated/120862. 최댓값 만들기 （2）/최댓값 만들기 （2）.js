@@ -1,7 +1,15 @@
 function solution(numbers) {
-    numbers.sort((a,b) => a - b);
-    const min = numbers[0] * numbers[1];
-    const max = numbers[numbers.length -1] * numbers[numbers.length -2];
-    
-    return min > max ? min : max;
+    let answer = 0;
+
+    const val = [];
+
+    for(let i = 0; i < numbers.length; i++) {
+        for(let j = i + 1; j < numbers.length; j++) {
+            val.push(numbers[i] * numbers[j])
+        }
+    }
+
+    answer = Math.max(...val);
+
+    return answer;
 }
